@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<layout xmlns:android = "http://schemas.android.com/apk/res/android"
+        xmlns:tools = "http://schemas.android.com/tools">
+
+    <data>
+        <variable name = "nama" type="String"/>
+    </data>
+
+<LinearLayout
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -14,5 +20,17 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:text="Nama" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@={nama}"
+        android:id="@+id/editTextNama" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text='@{nama==null||nama.equals("") ? "" : "Nama Anda: "+nama}'/>
 </LinearLayout>
+</layout>
